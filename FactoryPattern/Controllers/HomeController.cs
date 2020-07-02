@@ -1,5 +1,6 @@
 ﻿using FactoryPattern.Classes;
 using FactoryPattern.Factory;
+using FactoryPattern.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace FactoryPattern.Controllers
 {
+    [HandleError]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -26,10 +28,11 @@ namespace FactoryPattern.Controllers
                     ViewBag.Message = "Invalid Item";
                 }
             }
-            
 
-            
-            return View();
+            //throw exception for demo
+            throw new Exception("This is unhandled exception");
+
+            //return View("Index1");
         }
 
         public ActionResult About()
@@ -39,6 +42,7 @@ namespace FactoryPattern.Controllers
             return View();
         }
 
+        //[CustomValidation]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

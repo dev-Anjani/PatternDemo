@@ -1,0 +1,25 @@
+﻿@using FactoryPattern.Helpers;
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Index1</h2>
+
+@helper HelperName(string[] name)
+{
+    foreach (var item in name)
+    {
+        <p>Helper Item : @name</p>
+        <input type="button" value="@item" />
+    }
+    @Html.Image("source", "alternate")
+    @Html.ImageTag("src1","alt1")
+}
+
+
+@HelperName(new string[] { "a", "b", "c" })
+
+@section LeftSection
+{
+    <p>This is left section content</p>
+}
