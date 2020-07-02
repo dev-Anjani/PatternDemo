@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Logger;
 using System.Web.Mvc;
 
 namespace SingletonPattern.Controllers
 {
-    public class LoggerController : Controller
+    public class LoggerController : BaseController
     {
-        // GET: Logger
-        Singleton obj1 = Singleton.GetInstance;
-        
         public ActionResult Index()
         {
-            obj1.Logger("");
-            return View();
+            throw new System.Exception();
         }
     }
 }
